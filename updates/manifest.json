@@ -1,0 +1,23 @@
+{
+  "packVersion": "1.1.1",
+  "minAppVersion": "1.0.0",
+  "notes": "Cập nhật cấu hình AI (custom · deepseek-ai/deepseek-v4.1-flash-1017)",
+  "publishedAt": "2026-11-26T08:47:16.374Z",
+  "files": [
+    {
+      "path": "tools/extras.js",
+      "sha256": "6a0435378bc841146c70a1b6080771d7cf513a45666183c640b2e0f8a0693fd9",
+      "size": 3033
+    },
+    {
+      "path": "knowledge/printer-faq.md",
+      "sha256": "861581b8853ff9453e709a1cace9e529582bf70a6a55021d0406234ff8022cd9",
+      "size": 823
+    },
+    {
+      "path": "config/managed.dat",
+      "sha256": "6cd67d5c0158f55710c7146ac1c58e172f5cb190e3a787355e302805b0b7c8bd",
+      "size": 358
+    }
+  ]
+}

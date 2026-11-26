@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tuấn Fix — Trợ lý IT</title>
+  <meta name="description" content="Tuấn Fix — trợ lý IT có AI: sửa máy in, mạng, chia sẻ thư mục, dọn ổ đĩa. Chạy trên Windows và macOS.">
+  <link rel="icon" href="favicon.png">
+  <style>
+    :root { --bg: #f4f6fb; --panel: #fff; --text: #0f172a; --muted: #64748b; --border: #e2e8f0; --accent: #2563eb; --accent2: #7c3aed; --ok: #16a34a; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #0b1120; --panel: #111827; --text: #e5e7eb; --muted: #94a3b8; --border: #1f2937; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+    a { color: var(--accent); }
+    .hero { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; padding: 56px 20px 92px; text-align: center; }
+    .hero img { width: 128px; height: 128px; filter: drop-shadow(0 10px 24px rgba(0,0,0,.3)); }
+    .hero h1 { font-size: 44px; margin: 10px 0 4px; letter-spacing: -.5px; }
+    .hero p { margin: 0 auto; max-width: 620px; opacity: .92; font-size: 18px; }
+    .ver { display: inline-block; margin-top: 14px; background: rgba(255,255,255,.18); padding: 3px 12px; border-radius: 99px; font-size: 13px; }
+    main { max-width: 980px; margin: -60px auto 0; padding: 0 16px 60px; }
+    .downloads { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .dl { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 6px 24px rgba(15,23,42,.08); display: flex; flex-direction: column; gap: 8px; }
+    .dl.primary { border: 2px solid var(--accent); }
+    .dl .os { font-size: 30px; }
+    .dl h3 { margin: 0; font-size: 18px; }
+    .dl p { margin: 0; color: var(--muted); font-size: 14px; flex: 1; }
+    .btn { display: inline-block; text-align: center; background: var(--accent); color: #fff; text-decoration: none; padding: 11px 16px; border-radius: 10px; font-weight: 700; }
+    .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+    .tag { font-size: 12px; font-weight: 700; color: var(--ok); }
+    section { margin-top: 40px; }
+    h2 { font-size: 24px; margin: 0 0 14px; }
+    .steps { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .steps li { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px 12px 56px; position: relative; }
+    .steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 14px; top: 12px; width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 14px; }
+    .features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .f { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+    .f b { display: block; margin-bottom: 2px; }
+    .f span { color: var(--muted); font-size: 14px; }
+    code { background: var(--border); padding: 1px 6px; border-radius: 5px; font-size: 14px; }
+    footer { text-align: center; color: var(--muted); font-size: 13px; padding: 30px 16px; }
+    @media (max-width: 760px) { .downloads, .features { grid-template-columns: 1fr; } .hero h1 { font-size: 34px; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <img src="logo.png" alt="Tuấn Fix">
+    <h1>Tuấn Fix</h1>
+    <p>Trợ lý IT có AI do Minh Tuấn phát triển — tự chẩn đoán và sửa lỗi máy in, mạng, chia sẻ thư mục, dọn ổ đĩa ngay trên máy của bạn.</p>
+    <div class="ver" id="ver">Phiên bản mới nhất</div>
+  </header>
+
+  <main>
+    <div class="downloads">
+      <div class="dl primary" id="dl-win">
+        <div class="os">🪟</div>
+        <h3>Windows <span class="tag">khuyên dùng</span></h3>
+        <p>Bộ cài đặt cho Windows 10/11 (64-bit). Có biểu tượng trên Desktop & Start Menu, không cần quyền admin để cài.</p>
+        <a class="btn" href="https://github.com/TuanMonkey007/tuanfix/releases/latest/download/TuanFix-Setup.exe">⬇ Tải bộ cài Windows</a>
+      </div>
+      <div class="dl" id="dl-portable">
+        <div class="os">💼</div>
+        <h3>Windows — Portable</h3>
+        <p>Một file chạy luôn, không cần cài. Tiện chép vào USB để mang đi sửa máy.</p>
+        <a class="btn ghost" href="https://github.com/TuanMonkey007/tuanfix/releases/latest/download/TuanFix-Portable.exe">⬇ Tải bản Portable</a>
+      </div>
+      <div class="dl" id="dl-mac">
+        <div class="os">🍎</div>
+        <h3>macOS</h3>
+        <p>Cho Mac chip Apple (M1, M2, M3, M4…). Mở file .dmg rồi kéo Tuấn Fix vào thư mục Applications.</p>
+        <a class="btn ghost" href="https://github.com/TuanMonkey007/tuanfix/releases/latest/download/TuanFix-macOS-AppleChip.dmg">⬇ Tải cho macOS</a>
+      </div>
+    </div>
+
+    <section>
+      <h2>Cài đặt trên Windows</h2>
+      <ol class="steps">
+        <li>Bấm <b>Tải bộ cài Windows</b> rồi mở file <code>TuanFix-Setup.exe</code>.</li>
+        <li>Nếu Windows hiện <b>“Windows protected your PC”</b>: bấm <b>More info</b> → <b>Run anyway</b> (ứng dụng chưa mua chứng chỉ ký số nên Windows cảnh báo).</li>
+        <li>Chọn thư mục cài → <b>Install</b>. Xong, mở <b>Tuấn Fix</b> từ Desktop.</li>
+        <li>Khi bấm các nút sửa lỗi hệ thống, Windows sẽ hỏi quyền quản trị (UAC) — bấm <b>Yes</b>.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Cài đặt trên macOS</h2>
+      <ol class="steps">
+        <li>Mở file <code>.dmg</code>, kéo <b>Tuấn Fix</b> vào <b>Applications</b>.</li>
+        <li>Lần đầu mở: <b>chuột phải</b> vào app → <b>Open</b> → <b>Open</b> (do ứng dụng chưa ký số với Apple).</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Tuấn Fix làm được gì?</h2>
+      <div class="features">
+        <div class="f"><b>🤖 Trợ lý AI</b><span>Mô tả lỗi bằng lời thường, AI tự kiểm tra và sửa. Lưu lịch sử trò chuyện.</span></div>
+        <div class="f"><b>🖨️ Máy in</b><span>Offline, hết mực, hết giấy, kẹt lệnh in, khởi động lại dịch vụ in.</span></div>
+        <div class="f"><b>🌐 Mạng</b><span>Chẩn đoán từng bước máy tính → router → Internet → DNS → web.</span></div>
+        <div class="f"><b>📁 Chia sẻ thư mục</b><span>Sửa lỗi vào được \\IP mà không vào được \\tên-máy.</span></div>
+        <div class="f"><b>💾 Dung lượng</b><span>Phân tích kiểu TreeSize, xoá file lớn, dọn file rác an toàn.</span></div>
+        <div class="f"><b>⟳ Tự cập nhật</b><span>Tính năng mới tự cài, không phải tải lại ứng dụng.</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Minh Tuấn · Tuấn Fix</footer>
+
+  <script>
+    // Hiện số phiên bản mới nhất & làm nổi bật bản phù hợp với máy người xem
+    fetch('version.json', { cache: 'no-store' }).then((r) => r.json()).then((v) => { document.getElementById('ver').textContent = `Phiên bản ${v.version}`; }).catch(() => {});
+    if (/Mac/i.test(navigator.platform) && !/Win/i.test(navigator.platform)) {
+      document.getElementById('dl-mac').classList.add('primary');
+      document.getElementById('dl-win').classList.remove('primary');
+    }
+  </script>
+</body>
+</html>
